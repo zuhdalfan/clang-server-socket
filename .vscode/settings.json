@@ -1,0 +1,21 @@
+{
+    "files.associations": {
+        "socket.h": "c",
+        "in.h": "c",
+        "server.h": "c",
+        "*.tcc": "c",
+        "exception": "c",
+        "memory_resource": "c",
+        "fstream": "c",
+        "iosfwd": "c",
+        "new": "c",
+        "ostream": "c",
+        "sstream": "c",
+        "streambuf": "c",
+        "*.def": "c",
+        "stdio.h": "c",
+        "istream": "c",
+        "limits": "c",
+        "string.h": "c"
+    }
+}
