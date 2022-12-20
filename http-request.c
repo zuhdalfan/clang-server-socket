@@ -46,16 +46,18 @@ int method_select(char *method)
 struct HTTP_Request http_request_constructor(char *request_string)
 {
     struct HTTP_Request request;
-    for (int i = 0; i < strlen(request_string)-1; i++)
+    char requested[strlen(request_string)];
+    strcpy(requested, request_string);
+    for (int i = 0; i < strlen(requested)-1; i++)
     {
-        if(request_string[i] == '\n' && request_string[i+1] == '\n')
+        if(requested[i] == '\n' && requested[i+1] == '\n')
         {
-            request_string[i+1] = '|';
+            requested[i+1] = '|';
         }
     }
-    char *request_line = strtok(request_string, "\n");
-    char *header_field = strtok(request_string, "|");
-    char *body = strtok(request_string, "|");
+    char *request_line = strtok(requested, "\n");
+    char *header_field = strtok(NULL, "|");
+    char *body = strtok(NULL, "|");
     
 
     char *method =strtok(request_line, " ");
